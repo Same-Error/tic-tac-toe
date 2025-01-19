@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-class TicTacToe extends StatefulWidget {
-  const TicTacToe({super.key});
+class Dashboard extends StatefulWidget {
+  const Dashboard({super.key});
 
   @override
-  State<TicTacToe> createState() => _TicTacToeState();
+  State<Dashboard> createState() => _DashboardState();
 }
 
-class _TicTacToeState extends State<TicTacToe> {
+class _DashboardState extends State<Dashboard> {
   List xO = List.generate(9, (_) => "");
   bool toggle = true;
   String winner = "";
@@ -15,19 +15,9 @@ class _TicTacToeState extends State<TicTacToe> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color.fromARGB(
-        1000,
-        31,
-        33,
-        48,
-      ),
+      backgroundColor: Colors.amber,
       appBar: AppBar(
-        backgroundColor: const Color.fromARGB(
-          1000,
-          31,
-          33,
-          48,
-        ),
+        backgroundColor: Colors.amber,
         title: const Center(
           child: Text(
             "Tic Tac Toe",
@@ -58,16 +48,9 @@ class _TicTacToeState extends State<TicTacToe> {
                   },
                   child: Container(
                     decoration: BoxDecoration(
-                      color: const Color.fromARGB(
-                        1000,
-                        31,
-                        33,
-                        48,
-                      ),
+                      color: Colors.amberAccent,
                       borderRadius: BorderRadius.circular(5),
-                      border: Border.all(
-                          color: const Color.fromARGB(255, 141, 140, 140),
-                          width: 3),
+                      border: Border.all(color: Colors.orangeAccent, width: 3),
                     ),
                     height: 120,
                     width: 120,
@@ -76,7 +59,7 @@ class _TicTacToeState extends State<TicTacToe> {
                         xO[i],
                         style: TextStyle(
                           color: xO[i] == "X"
-                              ? Colors.red
+                              ? Colors.deepOrangeAccent
                               : xO[i] == "O"
                                   ? Colors.blue
                                   : Colors.white,
@@ -87,10 +70,6 @@ class _TicTacToeState extends State<TicTacToe> {
                   ),
                 ),
               ),
-            ),
-            Text(
-              winner.isEmpty ? "Game Status" : "Winner: $winner",
-              style: const TextStyle(fontSize: 30, color: Colors.white),
             ),
           ],
         ),
